@@ -1,0 +1,13 @@
+6.1
+What happens if users choose “Cancel”?
+-> The program will show You've chosen: No
+How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do”
+and “I don’t”
+exp : 
+int option = JOptionPane.showOptionDialog(null, 
+"Do you accept our policy?", "Custom Choice", 
+JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+null, new Object[]{"I do", "I don’t"}, "I do");
+JOptionPane.showMessageDialog(null, "You've chosen: " 
++ (option == JOptionPane.YES_OPTION ? "I do" : "I don’t"));
+ 
