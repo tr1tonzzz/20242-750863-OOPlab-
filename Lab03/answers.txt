@@ -1,0 +1,25 @@
+1. Which classes are aggregates of other classes?
+-CompactDisc is aggregated by Track
+-Store is aggregated by Media
+-Cart is  aggregated by Media
+2. What class should implement the Comparable interface?
+- The Media class should implement the Comparable<Media> interface
+3. In those classes, how should you implement the compareTo()method to reflect the ordering that
+we want?
+- The compareTo() method defines the default (natural) sorting 
+4. Can we have two ordering rules (by title-then-cost and cost-then-title) with Comparable?
+- No. The Comparable interface allows only one natural ordering via compareTo()
+5. Suppose DVDs have a different ordering rule: title → decreasing length → cost. How to support this?
+- Use Comparator per subclass: 
+public class DvdComparator implements Comparator<DigitalVideoDisc> {
+    public int compare(DigitalVideoDisc d1, DigitalVideoDisc d2) {
+        int titleCompare = d1.getTitle().compareToIgnoreCase(d2.getTitle());
+        if (titleCompare != 0) return titleCompare;
+
+        int lengthCompare = Integer.compare(d2.getLength(), d1.getLength()); // Giảm dần theo length
+        if (lengthCompare != 0) return lengthCompare;
+
+        return Float.compare(d1.getCost(), d2.getCost());
+    }
+}
+Collections.sort(dvdList, new DvdComparator());
