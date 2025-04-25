@@ -3,16 +3,13 @@ package hust.soict.hedspi.aims.media;
 import java.util.ArrayList;
 import java.util.List;
 
-import hust.soict.hedspi.aims.media.Book;
-import hust.soict.hedspi.aims.media.CompactDisc;
-
 public class MediaTest {
     public static void main(String[] args) {
         List<Media> mediaList = new ArrayList<>();
 
         DigitalVideoDisc dvd = new DigitalVideoDisc("The Matrix", "Science Fiction", "Wachowski", 120, 18.99f);
-        Book book = new Book("Clean Code", "Programming", 30.00f);
-        CompactDisc cd = new CompactDisc("Hybrid Theory", "Rock", "Linkin Park", 50.00f);
+        Book book = new Book(2, "Clean Code", "Programming", 30.00f);
+        CompactDisc cd = new CompactDisc(3, "Hybrid Theory", "Rock", 50.00f, "Joe Hahn", 48, "Linkin Park");
 
         mediaList.add(dvd);
         mediaList.add(book);
@@ -23,4 +20,3 @@ public class MediaTest {
         }
     }
 }
-
