@@ -6,7 +6,7 @@ import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.store.Store;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets; // ✅ Sử dụng đúng JavaFX Insets
+import javafx.geometry.Insets; 
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
